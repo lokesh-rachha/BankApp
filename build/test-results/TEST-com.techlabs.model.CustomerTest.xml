@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.techlabs.model.CustomerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-09-16T18:29:10" hostname="dell-PC" time="0.159">
+  <properties/>
+  <testcase name="registerPayeeShouldThrowExceptionOnRepeatingPayee" classname="com.techlabs.model.CustomerTest" time="0.052"/>
+  <testcase name="transferAmountShouldThrowExceptionOnIncorrectPassword" classname="com.techlabs.model.CustomerTest" time="0.04"/>
+  <testcase name="transferAmountShouldThrowExceptionOnLockedStatus" classname="com.techlabs.model.CustomerTest" time="0.038"/>
+  <testcase name="registerPayeeShouldExecuteOnNewPayee" classname="com.techlabs.model.CustomerTest" time="0.023"/>
+  <testcase name="transferAmountShouldExecuteOnCorrectPassword" classname="com.techlabs.model.CustomerTest" time="0.002"/>
+  <system-out><![CDATA[123456==========12348793
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

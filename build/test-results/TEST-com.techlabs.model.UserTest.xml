@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.techlabs.model.UserTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2017-09-16T18:29:10" hostname="dell-PC" time="0.174">
+  <properties/>
+  <testcase name="validateUserShouldThrowExceptionOnIncorrectPassword" classname="com.techlabs.model.UserTest" time="0.007"/>
+  <testcase name="authenticateUserShouldExecuteOnCorrectPassword" classname="com.techlabs.model.UserTest" time="0.007"/>
+  <testcase name="validateUserShouldReturnTrueOnCorrectPassword" classname="com.techlabs.model.UserTest" time="0.08"/>
+  <testcase name="authenticateUserShouldThrowExceptionOnIncorrectPassword" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="changePasswordShouldThrowExceptionOnIncorrectPassword" classname="com.techlabs.model.UserTest" time="0.004"/>
+  <testcase name="updateProfileShouldThrowExceptionOnIncorrectPassword" classname="com.techlabs.model.UserTest" time="0.006"/>
+  <testcase name="checkLockedStatusShouldThrowExceptionOnLockedStatus" classname="com.techlabs.model.UserTest" time="0.008"/>
+  <testcase name="generatePasswordShouldThrowExceptionOnLockedStatus" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="generatePasswordShouldThrowExceptionIncorrectPassword" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="generatePasswordShouldThrowExceptionOnIncorrectDetails" classname="com.techlabs.model.UserTest" time="0.006"/>
+  <testcase name="updateProfileShouldExecuteOnCorrectPassword" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="generatePasswordShouldExecuteOnCorrectEntry" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="changeUserStatusShouldReturnFalse" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="changeUserStatusShouldReturnTrue" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <testcase name="changePasswordShouldExecuteOnCorrectPassword" classname="com.techlabs.model.UserTest" time="0.005"/>
+  <system-out><![CDATA[123456==========123467
+123456==========123467
+123456==========1234765
+123456==========123456985
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

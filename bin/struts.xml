@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="main" extends="struts-default" namespace="/">
+
+		<interceptors>
+			<interceptor name="LoginInterceptor"
+				class="com.techlabs.interceptor.LoginInterceptor"></interceptor>
+
+			<interceptor-stack name="newStack">
+				<interceptor-ref name="LoginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+
+		<global-results>
+			<result name="login">/index.jsp</result>
+		</global-results>
+
+		<action name="">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="login" class="com.techlabs.action.UserAction"
+			method="login">
+			<result name="customer" type="redirectAction">customerHome</result>
+			<result name="employee" type="redirectAction">loadAddCustomerForm</result>
+			<result name="locked">/WEB-INF/locked.jsp</result>
+			<result name="changePassword" type="redirectAction">loadChangePasswordForm
+			</result>
+		</action>
+
+		<action name="loadForgetPasswordForm" class="com.techlabs.action.UserAction"
+			method="loadForgetPasswordForm">
+			<result name="success">/WEB-INF/forgetpassword.jsp</result>
+		</action>
+		
+		<action name="forgetPassword" class="com.techlabs.action.UserAction"
+			method="forgetPassword">
+			<result name="locked">/WEB-INF/locked.jsp</result>
+			<result name="input">/WEB-INF/forgetpassword.jsp</result>
+			<result name="success">/WEB-INF/forgetpassword.jsp</result>
+		</action>
+
+		<action name="logout" class="com.techlabs.action.UserAction"
+			method="logout">
+			<result name="success">/WEB-INF/logout.jsp</result>
+		</action>
+
+		<action name="customerHome" class="com.techlabs.action.CustomerAction"
+			method="customerHome">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/home.jsp</result>
+		</action>
+
+		<action name="loadRegisterPayeeForm" class="com.techlabs.action.CustomerAction"
+			method="loadRegisterPayeeForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/registerpayee.jsp</result>
+		</action>
+
+		<action name="registerPayee" class="com.techlabs.action.CustomerAction"
+			method="registerPayee">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/registerpayee.jsp</result>
+			<result name="success">/WEB-INF/registerpayee.jsp</result>
+		</action>
+
+		<action name="loadTransferMoneyForm" class="com.techlabs.action.CustomerAction"
+			method="loadTransferMoneyForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/transfermoney.jsp</result>
+		</action>
+
+		<action name="transferMoney" class="com.techlabs.action.CustomerAction"
+			method="transferMoney">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/transfermoney.jsp</result>
+			<result name="success">/WEB-INF/transfermoney.jsp</result>
+		</action>
+
+		<action name="loadAccountDetails" class="com.techlabs.action.CustomerAction"
+			method="loadAccountDetails">
+			<result name="success">/WEB-INF/loadtransferaccountdetails.jsp</result>
+		</action>
+
+		<action name="loadAddCustomerForm" class="com.techlabs.action.EmployeeAction"
+			method="loadAddCustomerForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/addcustomeraccount.jsp</result>
+		</action>
+
+		<action name="addCustomer" class="com.techlabs.action.EmployeeAction"
+			method="addCustomer">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/addcustomeraccount.jsp</result>
+			<result name="success">/WEB-INF/addcustomeraccount.jsp</result>
+		</action>
+
+		<action name="loadManageCustomerAccountForm" class="com.techlabs.action.EmployeeAction"
+			method="loadManageCustomerAccountForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/managecustaccount.jsp</result>
+		</action>
+
+		<action name="ajax_accountsList" class="com.techlabs.action.EmployeeAction"
+			method="accountsList">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/managecustaccount.jsp</result>
+			<result name="success">/WEB-INF/accountslist.jsp</result>
+		</action>
+
+		<action name="ajax_accountsDetails" class="com.techlabs.action.EmployeeAction"
+			method="accountsDetails">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/managecustaccount.jsp</result>
+			<result name="success">/WEB-INF/accountdetails.jsp</result>
+		</action>
+
+		<action name="manageCustomerAccount" class="com.techlabs.action.EmployeeAction"
+			method="manageCustomerAccount">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/managecustaccount.jsp</result>
+			<result name="success">/WEB-INF/managecustaccount.jsp</result>
+		</action>
+
+
+		<action name="loadChangeStatusForm" class="com.techlabs.action.EmployeeAction"
+			method="loadChangeStatusForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/changeuserstatus.jsp</result>
+		</action>
+
+		<action name="changeStatus" class="com.techlabs.action.EmployeeAction"
+			method="changeStatus">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/changeuserstatus.jsp</result>
+			<result name="success">/WEB-INF/changeuserstatus.jsp</result>
+		</action>
+
+		<action name="ajax_matchedUserList" class="com.techlabs.action.UserAction"
+			method="matchedUserList">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/matcheduserlist.jsp</result>
+			<result name="success">/WEB-INF/matcheduserlist.jsp</result>
+		</action>
+
+		<action name="loadChangePasswordForm" class="com.techlabs.action.UserAction"
+			method="loadChangePasswordForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/changepassword.jsp</result>
+		</action>
+
+		<action name="changePassword" class="com.techlabs.action.UserAction"
+			method="changePassword">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/changepassword.jsp</result>
+			<result name="success">/WEB-INF/changepassword.jsp</result>
+		</action>
+
+		<action name="loadUpdateProfileForm" class="com.techlabs.action.UserAction"
+			method="loadUpdateProfileForm">
+			<interceptor-ref name="newStack" />
+			<result name="success">/WEB-INF/updateprofile.jsp</result>
+		</action>
+
+		<action name="updateProfile" class="com.techlabs.action.UserAction"
+			method="updateProfile">
+			<interceptor-ref name="newStack" />
+			<result name="input">/WEB-INF/updateprofile.jsp</result>
+			<result name="success">/WEB-INF/updateprofile.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
+    
